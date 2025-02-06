@@ -14,6 +14,7 @@ body[data-use-vscode-theme-color="1"] .vditor {
   --panel-background-color: var(--vscode-editor-background);
   --toolbar-background-color: var(--vscode-editor-background);
   --textarea-background-color: var(--vscode-editor-background);
+  --ir-heading-color: var(--vscode-editorLineNumber-foreground)
 }
 /* fix font family */
 .vditor .vditor-reset {
@@ -21,11 +22,14 @@ body[data-use-vscode-theme-color="1"] .vditor {
 }
 /* fix code block color in dark mode */
 .vditor--dark .vditor-reset code:not(.hljs):not(.highlight-chroma) {
-  background-color: rgba(66,133,244,.1);
+  background-color: rgba(0,0,0,0);
+  background-image: none;
 }
-/* fix outline toolbar padding */
-.vditor-toolbar.vditor-toolbar--pin {
-  padding-left: 35px!important;
+/* TODO: disable hljs */
+.vditor--dark .vditor-reset pre.vditor-ir__preview:has(code) {
+  background-color: var(--vscode-activityBar-background);
+  border-radius: 5px;
+  padding: 5px;
 }
 .vditor-ir pre.vditor-reset {
   position: relative;
@@ -44,8 +48,8 @@ body[data-use-vscode-theme-color="1"] .vditor {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: white;
-  color: black;
+  background-color: var(--toolbar-background-color);
+  color: var(--toolbar-icon-color);
   text-align: center;
   font-family: none;
 }
@@ -61,13 +65,33 @@ body[data-use-vscode-theme-color="1"] .vditor {
 .vditor-panel_hover:after {
   display: none;
 }
-
-.vditor-reset {
-  padding-left: 35px !important;
-}
 .jconfirm {
   color: black;
 }
 .jconfirm-buttons button {
   text-transform: none!important;
+}
+.vditor--dark .vditor-reset table tr,
+.vditor--dark .vditor-reset table tbody tr:nth-child(2n) {
+  background-color: var(--textarea-background-color);
+}
+div.vditor {
+  border: none;
+}
+.vditor .vditor-reset h1,
+.vditor .vditor-reset h2 {
+  border-bottom: 1px solid var(--vscode-editorLineNumber-foreground);
+}
+.vditor-copy span {
+  right: 2px;
+  top: 5px;
+}
+.vditor-ir__marker--heading {
+  color: var(--ir-heading-color);
+}
+.vditor-ir__node pre.vditor-ir__preview {
+  display: block;
+}
+.vditor-ir__node--expand pre.vditor-ir__preview {
+  display: none;
 }
