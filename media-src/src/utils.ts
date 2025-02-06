@@ -4,7 +4,7 @@ require('jquery-confirm')(window, $)
 import 'jquery-confirm/css/jquery-confirm.css'
 
 import _ from 'lodash'
-import Vditor from 'vditor'
+import Vditor from '../vditor'
 window.vscode =
   (window as any).acquireVsCodeApi && (window as any).acquireVsCodeApi()
 ;(window as any).global = window

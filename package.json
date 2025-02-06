@@ -35,7 +35,7 @@
     "commands": [
       {
         "command": "markdown-editor.openEditor",
-        "title": "Open with markdown editor",
+        "title": "Open with Markdown Editor",
         "category": "markdown-editor"
       }
     ],

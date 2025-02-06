@@ -11,9 +11,9 @@ import {
 } from './utils'
 
 import { merge } from 'lodash'
-import Vditor from 'vditor'
+import Vditor from '../vditor'
 import { format } from 'date-fns'
-import 'vditor/dist/index.css'
+import '../vditor/dist/index.css'
 import { t, lang } from './lang'
 import { toolbar } from './toolbar'
 import { fixTableIr } from './fix-table-ir'
