@@ -21,40 +21,25 @@
     "markdown-previewer",
     "markdown-editor"
   ],
-  "activationEvents": [
-    "onCommand:markdown-editor.openEditor",
-    "onWebviewPanel:markdown-editor",
-    "onLanguage:markdown"
-  ],
+  "activationEvents": [],
   "repository": {
     "type": "git",
     "url": "https://github.com/zaaack/vscode-markdown-editor.git"
   },
   "main": "out/extension.js",
   "contributes": {
-    "commands": [
+    "customEditors": [
       {
-        "command": "markdown-editor.openEditor",
-        "title": "Open with Markdown Editor",
-        "category": "markdown-editor"
+        "viewType": "markdown-editor.markdownEditor",
+        "displayName": "Markdown Editor",
+        "selector": [
+          {
+            "filenamePattern": "*.md"
+          }
+        ],
+        "priority": "default"
       }
     ],
-    "menus": {
-      "explorer/context": [
-        {
-          "when": "resourceLangId == markdown",
-          "command": "markdown-editor.openEditor",
-          "group": "navigation"
-        }
-      ],
-      "editor/title/context": [
-        {
-          "when": "resourceLangId == markdown",
-          "command": "markdown-editor.openEditor",
-          "group": "1_open"
-        }
-      ]
-    },
     "configuration": {
       "title": "markdown-editor",
       "properties": {
@@ -73,15 +58,7 @@
           "default": ""
         }
       }
-    },
-    "keybindings": [
-      {
-        "key": "ctrl+shift+alt+m",
-        "command": "markdown-editor.openEditor",
-        "mac": "cmd+shift+alt+m",
-        "when": "editorTextFocus && editorLangId == markdown"
-      }
-    ]
+    }
   },
   "scripts": {
     "watch": "foy watch",
