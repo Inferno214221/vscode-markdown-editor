@@ -38,6 +38,10 @@ function initVditor(msg) {
     preview: {
       math: {
         inlineDigit: true,
+      },
+      hljs: {
+        enable: true,
+        style: "github-dark",
       }
     }
   })
@@ -54,7 +58,8 @@ function initVditor(msg) {
     mode: 'ir',
     cache: { enable: false },
     toolbar,
-    toolbarConfig: { pin: true },
+    toolbarConfig: { pin: false, hide: true },
+    counter: { enable: true },
     ...defaultOptions,
     after() {
       fixDarkTheme()

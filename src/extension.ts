@@ -136,7 +136,6 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
           // 只有当 webview 处于编辑状态时才同步到 vsc 编辑器，避免重复刷新
           if (webviewPanel.active) {
             await syncToEditor()
-            // this._updateEditTitle()
           }
           break
         }
@@ -146,8 +145,7 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
         }
         // case 'save': {
         //   await syncToEditor()
-        //   await this._document.save()
-        //   this._updateEditTitle()
+        //   await document.save()
         //   break
         // }
         case 'upload': {

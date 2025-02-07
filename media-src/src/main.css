@@ -19,17 +19,20 @@ body[data-use-vscode-theme-color="1"] .vditor {
 /* fix font family */
 .vditor .vditor-reset {
   font-family: var(--vscode-editor-font-family)!important;
+  font-size: var(--vscode-editor-font-size);
 }
 /* fix code block color in dark mode */
 .vditor--dark .vditor-reset code:not(.hljs):not(.highlight-chroma) {
   background-color: rgba(0,0,0,0);
   background-image: none;
 }
-/* TODO: disable hljs */
-.vditor--dark .vditor-reset pre.vditor-ir__preview:has(code) {
+/* .vditor--dark .vditor-reset pre.vditor-ir__preview:has(code) {
   background-color: var(--vscode-activityBar-background);
   border-radius: 5px;
   padding: 5px;
+} */
+.vditor--dark .vditor-reset pre.vditor-ir__preview code {
+  padding-bottom: 9.9px;
 }
 .vditor-ir pre.vditor-reset {
   position: relative;
@@ -83,8 +86,8 @@ div.vditor {
   border-bottom: 1px solid var(--vscode-editorLineNumber-foreground);
 }
 .vditor-copy span {
-  right: 2px;
-  top: 5px;
+  right: 10px;
+  top: 10px;
 }
 .vditor-ir__marker--heading {
   color: var(--ir-heading-color);
@@ -94,4 +97,37 @@ div.vditor {
 }
 .vditor-ir__node--expand pre.vditor-ir__preview {
   display: none;
+}
+
+.vditor-ir .vditor-reset {
+  & > h1 {
+    position: relative;
+    &::before {
+      position: absolute;
+      /* Account for the underline */
+      top: calc(50% - 4.175px);
+      transform: translateY(-50%);
+    }
+  }
+
+  & > h2 {
+    position: relative;
+    &::before {
+      position: absolute;
+      top: calc(50% - 3.755px);
+      transform: translateY(-50%);
+    }
+  }
+  
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 }
