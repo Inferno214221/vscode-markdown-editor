@@ -18,11 +18,13 @@ export function fixTableIr() {
     if (!tablePanel) {
       tablePanel = document.createElement('div')
       tablePanel.id = tablePanelId
+      tablePanel.style.userSelect = "none";
+      tablePanel.contentEditable = "false";
       eventRoot.appendChild(tablePanel)
       tablePanel.innerHTML = `<div
     class="vditor-panel vditor-panel--none vditor-panel-ir"
     data-top="73"
-    style="left: 35px; top: 73px;display:none"
+    style="left: ${eventRoot.style.paddingLeft}; top: 73px; display: none;"
   >
    <button
       type="button"
