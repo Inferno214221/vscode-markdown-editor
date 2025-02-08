@@ -59,7 +59,7 @@ function initVditor(msg) {
     cache: { enable: false },
     toolbar,
     toolbarConfig: { pin: true },
-    counter: { enable: true },
+    counter: { enable: true, type: "text" },
     ...defaultOptions,
     after() {
       // fixDarkTheme()
