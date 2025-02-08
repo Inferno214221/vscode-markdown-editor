@@ -18,43 +18,44 @@ export const toolbar = [
 	//   },
 	// },
 
-	'emoji',
-	'headings',
-	'bold',
-	'italic',
-	'strike',
-	'link',
-	'|',
-	'list',
-	'ordered-list',
-	'check',
-	'outdent',
-	'indent',
-	'|',
-	'quote',
-	'line',
-	'code',
-	'inline-code',
+	// 'emoji',
+	// 'headings',
+	// 'bold',
+	// 'italic',
+	// 'strike',
+	// 'link',
+	// '|',
+	// 'list',
+	// 'ordered-list',
+	// 'check',
+	// 'outdent',
+	// 'indent',
+	// '|',
+	// 'quote',
+	// 'line',
+	// 'code',
+	// 'inline-code',
 	'insert-before',
 	'insert-after',
-	'|',
+	// '|',
 	'upload',
-	'table',
+	// 'table',
 	'|',
 	'undo',
 	'redo',
 	'|',
-	{
-		name:'edit-mode',
-		tipPosition: 's'
-	},
+	'edit-mode',
+	// {
+	// 	name:'edit-mode',
+	// 	tipPosition: 's'
+	// },
 	{
 	  name: 'more',
 	  tipPosition: 's',
 	  toolbar: [
-		'both',
-		'code-theme',
-		'content-theme',
+		// 'both',
+		// 'code-theme',
+		// 'content-theme',
 		'outline',
 		'preview',
 		{
@@ -93,34 +94,34 @@ export const toolbar = [
 			}
 		  },
 		},
-		{
-		  name: 'reset-config',
-		  icon: t('resetConfig'),
-		  async click() {
-			confirm(t('resetConfirm'), async () => {
-			  try {
-				await vscode.postMessage({
-				  command: 'reset-config',
-				})
-				await vscode.postMessage({
-				  command: 'ready',
-				})
-				vscode.postMessage({
-				  command: 'info',
-				  content: 'Reset config successfully!',
-				})
-			  } catch (error) {
-				vscode.postMessage({
-				  command: 'error',
-				  content: 'Reset config failed!',
-				})
-			  }
-			})
-		  },
-		},
-		'devtools',
-		'info',
-		'help',
+		// {
+		//   name: 'reset-config',
+		//   icon: t('resetConfig'),
+		//   async click() {
+		// 	confirm(t('resetConfirm'), async () => {
+		// 	  try {
+		// 		await vscode.postMessage({
+		// 		  command: 'reset-config',
+		// 		})
+		// 		await vscode.postMessage({
+		// 		  command: 'ready',
+		// 		})
+		// 		vscode.postMessage({
+		// 		  command: 'info',
+		// 		  content: 'Reset config successfully!',
+		// 		})
+		// 	  } catch (error) {
+		// 		vscode.postMessage({
+		// 		  command: 'error',
+		// 		  content: 'Reset config failed!',
+		// 		})
+		// 	  }
+		// 	})
+		//   },
+		// },
+		// 'devtools',
+		// 'info',
+		// 'help',
 	  ],
 	},
   ].map((it: any) => {

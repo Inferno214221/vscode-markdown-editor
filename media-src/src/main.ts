@@ -58,11 +58,11 @@ function initVditor(msg) {
     mode: 'ir',
     cache: { enable: false },
     toolbar,
-    toolbarConfig: { pin: false, hide: true },
+    toolbarConfig: { pin: true },
     counter: { enable: true },
     ...defaultOptions,
     after() {
-      fixDarkTheme()
+      // fixDarkTheme()
       handleToolbarClick()
       fixTableIr()
       fixPanelHover()

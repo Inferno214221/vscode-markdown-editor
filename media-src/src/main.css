@@ -23,7 +23,7 @@ body[data-use-vscode-theme-color="1"] .vditor {
 }
 /* fix code block color in dark mode */
 .vditor--dark .vditor-reset code:not(.hljs):not(.highlight-chroma) {
-  background-color: rgba(0,0,0,0);
+  background-color: transparent;
   background-image: none;
 }
 /* .vditor--dark .vditor-reset pre.vditor-ir__preview:has(code) {
@@ -130,4 +130,12 @@ div.vditor {
       transform: translateY(-50%);
     }
   }
+}
+
+.vditor-counter {
+  background-color: transparent;
+  margin-right: 15px;
+  margin-top: 0px;
+  padding-top: 11.5px;
+  padding-bottom: 11.5px;
 }
